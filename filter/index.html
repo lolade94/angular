@@ -1,0 +1,78 @@
+<!Doctype html>
+<html ng-app="myFilter">
+	<head>
+	<title> Filter Tutorial</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+	<script src="script.js"> </script>
+	</head>
+	<body>
+	
+	<h1> Filter Tutorial </h1>
+	<div ng-controller="filterController">
+	
+	<div>
+	  <p><b> Enter price: </b> </p>
+	  <input name="name" ng-model="price" placeholder="Enter prices"/>
+	  <p> Output: 
+	  <b> {{price| currency}}</b>
+	  </p>
+	 </div>
+	 
+	 <div>
+	 <p> <b> Enter string: </b> </p>
+	 <input name="name" ng-model="upper" placeholder="Enter String"/>
+	 <p> Output:
+	 <b>{{upper| uppercase}}</b>
+	 </p> 
+	 </div>
+	 
+	 <div>
+	 <p><b>Enter string: </b></p>
+	 <input name="name" ng-model="low" placeholder="Enter String"/>
+	 <p> <b> {{low|lowercase}}</b> </p>
+	 </div>
+	 
+
+	<ul>
+	<li ng-repeat="friend in friends | filter :{name:'a'}">
+	 {{friend.name}}
+	</li>
+	</ul>
+	
+	<h3> Order By Filter</h3>
+	<ul>
+		<li ng-repeat="friend in friends | orderBy: 'name' ">
+		{{friend.name}} 
+		{{friend.age}}
+		</li>
+	</ul>
+	
+	<div>
+		<input type="text" name="limit" ng-model="lim"  placeholder="Enter input"/>
+		<input type="number" step="1" ng-model="li"  value="3"/>
+		<p>
+		Output:
+		<b> 
+		{{lim| limitTo: li}}
+		</b>
+		{{number| number:2}}
+		</br>
+		{{decimal| number:1}}
+		</p>
+		<div>
+		{{friends | json}}
+		</div>
+	
+	</div>
+	
+	</div>
+	
+
+	
+	
+	</body>
+
+
+
+
+</html>

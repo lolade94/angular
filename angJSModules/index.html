@@ -1,0 +1,55 @@
+<html>
+
+<head>
+<title> AngularJS Modules</title>
+</head>
+
+<body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+<p>
+AngularJS module defines an application. The modular is a container
+for the different parts of an application. 
+The module is a container for the application controllers.'=
+Controller always belong to a module.
+</p>
+
+<div ng-app="myApp" ng-controller="myCtrl">
+{{City + "," + State}}
+
+
+<div ng-controller="ctrl">
+{{ Ball + " " + Play }}  
+</div> 
+
+</div>
+<br>
+<br>
+
+
+
+
+
+<script>
+
+var app = angular.module("myApp", []);
+//myapp parameter refers to the html element that the application will run on
+
+app.controller("myCtrl", function($scope){
+
+$scope.City="Los Angeles";
+$scope.State="California";
+
+});
+
+
+//"myApp.js" contains an application module definition, while "Ctrl.js" contains controller
+
+</script>
+
+
+<script src="Ctrl.js"> </script>
+
+
+</body>
+</html>

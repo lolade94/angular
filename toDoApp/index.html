@@ -1,0 +1,44 @@
+
+<!Doctype html>
+<html>
+
+<head>
+<meta charset="utf-8">
+<title> To Do App</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+<script src="scripts.js"> </script>
+<style>
+.done{
+text-decoration:line-through;
+color:#ccc;
+}
+</style>
+</head>
+<!--angular application starts-->
+<body ng-app="toDo" >
+
+   <!--communicates model object data with view-->
+	<div ng-controller="ctrl">
+   <!--after submit call addTodo function-->
+	 <form name="frm" ng-submit="addTodo()">
+	    <input type="text" name="newtodo" ng-model="newtodo" required/>
+		<button> Add Task</button>
+	 </form>
+	 <!--delete a task-->
+	
+	 
+	 <ul>
+	    <li ng-repeat="todo in todos ">
+			<span> {{todo.title}} </span>
+			
+		     <button ng-click="clearTask()"> delete
+		</button>
+		</li>
+	 </ul>
+
+	</div>
+
+
+</body>
+
+</html>

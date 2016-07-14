@@ -1,0 +1,43 @@
+<!Doctype html>
+
+<html ng-app="theme">
+<head>
+<title>  Themes </title>
+<link href="style.css" type="text/css" rel="stylesheet"/>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+<script src="script.js"></script>
+</head>
+	<body>
+	  <div class="container">
+		<div class="product_wrapper" ng-controller="themeController">
+			<h1> Wordpress Template Guide</h1>
+			<div class="single-product" ng-repeat="product in products">
+				<div class="product">
+				    <p class="prod_title"> {{product.prod_name}}</p>
+					<img class="prod_img" width="200px" height= "100px" ng-src="images/{{product.prod_img}}"/>
+					 <div class="form-group">
+					  
+					  <button class="btn-info details"  ng-click="showFeature($index)" ng-hide="product.detail_hide_status">
+						Show Features
+					  </button>
+					  
+					  <div class="btn-info success" ng-hide="product.detail_hide_status">
+					  Price: {{product.price}}
+					  </div>
+				</div>
+				<ul class="prod_details" ng-show="product.detail_status">
+					<li class="feature" ng-repeat="feature in product.feature">
+					{{feature}}
+					</li>
+				</ul>
+				<div class="form-group">
+					<button class="details" ng-click="hideFeature($index)" ng-show="product.detail_status"> Hide Feature</button>
+					<a href="{{product.download}}" class=" details" ng-show="product.detail_status"> Buy Theme </a>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+	    </div>
+	  </div>
+	</div>
+	</body>
+</html>

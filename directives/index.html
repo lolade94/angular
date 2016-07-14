@@ -1,0 +1,93 @@
+<!Doctype html>
+<html>
+<head>
+<title> Directives</title>
+<meta charset="utf-8"/>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+</head>
+
+<body ng-app="">
+<p> ng-app directive tells AngualarJS that body element is the owner of an angular<br>
+application</p>
+
+<div> Name:<input type="text" ng-model="name" />  </div>
+<p> ng- model direcive binds the value of html controls to the application data</p>
+
+<div ng-bind="name"> </div>
+<p> ng-bind directive binds the innerhtml or value of input ng-model app variable names</p>
+
+<div ng-init="firstname='Drake'"> <p> The name is <span ng-bind="firstname"></span> </p> </div>
+
+
+<div ng-init="lastname='Graham'"> <p> The name is <span ng-bind="lastname"></span> </p></div>
+
+
+<div ng-model="Occupation='Love'"> <p> The JOB is <span ng-bind="Occupation"></span></p> </div>
+
+
+<div> Hey <input type="text" data-ng-model="intro"/>
+</div>
+<div data-ng-bind="intro">
+
+</div>
+
+
+<br>
+<br>
+
+<div> Expressions 
+
+<p>
+AngularJS expressions can be written inside double braces: {{ expression }}
+AngularJS expressions can also be written inside a directive: ng-bind="expression".
+AngularJS will resolve the expression, and return the result exactly where the expression is written.
+AngularJS expressions are much like JavaScript expressions: They can contain literals, operators, and variables.
+Example {{ 5 + 5 }} or {{ firstName + " " + lastName }}
+</p>
+<div ng-init="mycol='red'">
+ <input type="test" style="background-color:{{mycol}}" ng-model="mycol" value="{{mycol}}"/>
+ <p>AngularJS resolves the expression and returns the result.</p>
+</div>
+
+<div ng-init="quantity=2;price=10.50">
+ <p>  Total Cost = $<span ng-bind="{{quantity * price}}"> </span> </p>
+</div>
+
+
+<p> 5 + 5 equals to {{5 +5}}</p>
+</div>
+<br>
+<br>
+
+<p> AngularJS strings are like javascript strings</p>
+
+<div ng-init="first='Lola';last='Akinleye'">
+<p> Hello {{first + " "+ last}}</p>
+
+<span ng-bind="first + ' ' + last" ></span>
+</div> 
+
+<div ng-init="point=[10,20,33,4,90,19]">
+
+<span> 
+<p> The third result is {{point[4]}} <br>
+AngularJS Expressions vs. JavaScript Expressions
+Like JavaScript expressions, AngularJS expressions can contain literals, operators, and variables.
+Unlike JavaScript expressions, AngularJS expressions can be written inside HTML.
+AngularJS expressions do not support conditionals, loops, and exceptions, while JavaScript expressions do.
+AngularJS expressions support filters, while JavaScript expressions do not.</p>
+</span>
+
+</div>
+
+<div ng-init="person={first:'Lola' , middle:'Rachel'}">
+
+<p>  The name is {{ person.middle }} </p>
+
+</div>
+
+
+</body>
+
+
+</html>

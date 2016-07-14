@@ -1,0 +1,42 @@
+<html ng-app="customs">
+<head>
+<title> Custom Filters  </title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+<script src="script.js"> </script>
+
+</head>
+<body>
+
+<div class="container" ng-controller="customController">
+
+<h3> Regular Numbers </h3>
+  <ul>
+  <li>{{example1}} </li>
+  <li>{{example2}} </li>
+  <li>{{example3 }} </li>
+  <li>{{example4}} </li>
+  <li>{{example5 }} </li>
+  <li> {{example6 }}</li>
+  <li> {{example7}}</li>
+  <li>{{ example8  }} </li>
+ </ul>
+ <h3> Ordinal Numbers</h3> 
+ 
+  <ul >
+  <li>{{example1 | ordinal }} </li>
+  <li>{{example2 | ordinal }} </li>
+  <li>{{example3 | ordinal }} </li>
+  <li>{{example4 | ordinal }} </li>
+  <li>{{example5 | ordinal  }} </li>
+  <li> {{example6 | ordinal }}</li>
+  <li> {{example7 | ordinal }}</li>
+  <li>{{ example8 | ordinal }} </li>
+ </ul>
+
+</div>
+
+
+
+
+</body>
+</html>
